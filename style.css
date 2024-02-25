@@ -1,10 +1,8 @@
-/* At the very top of your CSS file */
+/* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
 
 /* CSS Variables for the color scheme */
 :root {
-    /* Define your color scheme */
     --primary-color: #941919; /* Red */
     --secondary-color: #13189e; /* Blue */
     --text-color: #ffffff; /* White text */
@@ -26,14 +24,8 @@
     max-width: 1200px; /* Maximum width of the content area */
     margin: 0 auto; /* Centers the container */
     padding: 0 15px; /* Padding on the sides */
+    margin-top: 20px; /* Added margin for better spacing */
 }
-
-/* Apply the container class to the main content areas in your HTML */
-/*
-<div class="container">
-    ... Your content here ...
-</div>
-*/
 
 /* Body styling */
 body {
@@ -55,11 +47,11 @@ header {
 
 h1, h2, h3 {
     font-weight: 700;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     margin-bottom: 0.5rem;
 }
 
@@ -71,7 +63,7 @@ h2 {
 
 /* Paragraph styling */
 p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
 }
 
@@ -90,7 +82,8 @@ a, .btn-primary {
     transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover, a:hover {
+.btn-primary:hover,
+a:hover {
     background-color: darken(var(--primary-color), 10%);
     color: var(--text-color);
 }
@@ -106,26 +99,24 @@ a, .btn-primary {
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
-    border: 2px solid var(--primary-color); /* Replace with your button's background color */
-    transition: background-color 0.3s, transform 0.1s; /* Add transform to the transition */
+    transition: background-color 0.3s, border 0.3s, transform 0.1s;
+    border: 2px solid var(--primary-color);
 }
 
 .book-lesson-btn:active {
-    /* Pressed state styles */
-    transform: translateY(2px); /* Makes the button appear pressed down */
-    border-color: #darkerShade; /* Optional: border color to indicate active state */
+    transform: translateY(2px);
 }
 
 .book-lesson-btn:hover {
-    color: var(--text-color); /* Ensure it matches the button's normal text color */
-    text-decoration: none; /* Prevent underline if that's not desired */
-    background-color: var(--primary-color); /* Match the normal state background color */
+    color: var(--text-color);
+    text-decoration: none;
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 a:hover {
-    color: #13189e; /* Or any color that contrasts well with your background */
-    text-decoration: underline; /* Optional: adds an underline on hover */
+    color: #13189e;
+    text-decoration: underline;
 }
 
 /* Section styling */
@@ -135,23 +126,51 @@ section {
     margin-bottom: 20px;
     padding: 20px;
     background-color: var(--content-background-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* About Section Styling */
+.about-content {
+    display: flex;
+    align-items: center;
+}
+
+.text-container {
+    flex-grow: 1;
 }
 
 /* Image styling */
-img.profile-pic {
-    max-width: 100px; /* Adjust the size as needed */
+.profile-pic {
+    max-width: 180px;
     height: auto;
     border-radius: 50%;
     border: 4px solid var(--primary-color);
     display: block;
-    margin: 0 auto 20px;
+    margin: 10px 40px 10px 0;
+}
+
+/* Preferred Center Section Styling */
+.preferred-center-content {
+    display: flex;
+    align-items: center;
+}
+
+.preferred-center-text {
+    flex-grow: 1;
+    text-align: left; /* Align text to the left */
+}
+
+.preferred-center-img {
+    max-width: 400px; /* Adjust the size as needed */
+    height: auto;
+    margin-left: 18px; 
 }
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
     h1 {
         font-size: 2rem;
+        margin-bottom: 0.25rem;
     }
 
     header {
@@ -160,5 +179,27 @@ img.profile-pic {
 
     .btn-primary {
         width: 100%;
+    }
+
+    .about-content,
+    .preferred-center-content {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .text-container,
+    .preferred-center-text {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .profile-pic {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+
+    .preferred-center-img {
+        max-width: 100%;
+        height: auto;
+        margin-left: 0;
     }
 }
