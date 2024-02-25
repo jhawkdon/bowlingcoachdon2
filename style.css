@@ -4,11 +4,13 @@
 
 /* CSS Variables for the color scheme */
 :root {
+    /* Define your color scheme */
     --primary-color: #941919; /* Red */
     --secondary-color: #13189e; /* Blue */
-    --text-color: #ffffff; /* White text for use on top of the primary and secondary colors */
-    --background-color: #f4f4f4; /* Light background color */
-    --border-color: #e2e2e2; /* Border color for sections */
+    --text-color: #ffffff; /* White text */
+    --background-color: #f9f9f9; /* Light grey background */
+    --content-background-color: #ffffff; /* White background for content areas */
+    --border-color: #e2e2e2; /* Light grey border */
 }
 
 /* Resetting some basic elements for consistency */
@@ -18,19 +20,34 @@
     box-sizing: border-box;
 }
 
+/* Global container style */
+.container {
+    width: 100%; /* Full width to maintain responsiveness */
+    max-width: 1200px; /* Maximum width of the content area */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 15px; /* Padding on the sides */
+}
+
+/* Apply the container class to the main content areas in your HTML */
+/*
+<div class="container">
+    ... Your content here ...
+</div>
+*/
+
 /* Body styling */
 body {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     line-height: 1.75;
     color: #333;
-    background-color: var(--background-color);
+    background-color: var(--background-color); /* Apply the background color */
     padding: 20px;
 }
 
 /* Header and headings styling */
 header {
-    background: var(--secondary-color);
+    background-color: var(--secondary-color); /* Solid color background */
     color: var(--text-color);
     padding: 20px 0;
     text-align: center;
@@ -78,13 +95,46 @@ a, .btn-primary {
     color: var(--text-color);
 }
 
+.book-lesson-btn {
+    display: inline-block;
+    background-color: var(--primary-color); /* Use your theme's primary color */
+    color: var(--text-color); /* Use white or another light color for text */
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border: 2px solid var(--primary-color); /* Replace with your button's background color */
+    transition: background-color 0.3s, transform 0.1s; /* Add transform to the transition */
+}
+
+.book-lesson-btn:active {
+    /* Pressed state styles */
+    transform: translateY(2px); /* Makes the button appear pressed down */
+    border-color: #darkerShade; /* Optional: border color to indicate active state */
+}
+
+.book-lesson-btn:hover {
+    color: var(--text-color); /* Ensure it matches the button's normal text color */
+    text-decoration: none; /* Prevent underline if that's not desired */
+    background-color: var(--primary-color); /* Match the normal state background color */
+}
+
+a:hover {
+    color: #13189e; /* Or any color that contrasts well with your background */
+    text-decoration: underline; /* Optional: adds an underline on hover */
+}
+
 /* Section styling */
 section {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--content-background-color);
     box-shadow: 0 4px 8px rgba(0,0,0,0.05);
 }
 
